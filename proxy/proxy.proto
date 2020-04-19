@@ -1,0 +1,15 @@
+syntax="proto3";
+option go_package=".;proxy";
+package proxy;
+
+service Proxy {
+  rpc Get(Request) returns (Response) {}
+}
+
+message Request {
+  string url = 1;
+}
+message Response {
+  string content = 1;
+  string code = 2;
+}
